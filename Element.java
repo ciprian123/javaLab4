@@ -24,4 +24,12 @@ public class Element {
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
+
+    @Override
+    public String toString() {
+        return "Repartizare{" +
+                "resident=" + resident.getName() +
+                ", hospital=" + hospital.getName() +
+                "}";
+    }
 }
