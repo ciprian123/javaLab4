@@ -52,23 +52,6 @@ public class Problem {
         }
     }
 
-    /**
-     *
-     * @return false if resident prefers another hospital, and the hospital prefers the resident, true otherwise
-     */
-    public boolean isStableMatching() {
-//        for w in women:
-//        for m in [men w would prefer over current_partner(w)]:
-//        if m prefers w to current_partner(m) return false
-//
-//        return true
-        for (Hospital hospital : someHospitals) {
-            for (Resident resident : hospital.getResidentList()) {
-
-            }
-        }
-    }
-
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
