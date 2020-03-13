@@ -6,19 +6,23 @@ import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
-        var residents = IntStream.rangeClosed(0, 3)
-                                 .mapToObj(i -> new Resident("Resident" + i) )
-                                 .toArray(Resident[]::new);
+        ProblemGenerator problemGenerator = new ProblemGenerator(3);
+        problemGenerator.generateRandomProblems();
+        problemGenerator.printRandomProblems();
 
-        var hospitals = IntStream.rangeClosed(0, 2)
-                                 .mapToObj(i -> new Hospital("Hospital" + i, i == 2 ? 2 : i % 2 + 1))
-                                 .toArray(Hospital[]::new);
-
-        // adaug preferintele rezidentilor
-        residents[0].setHospitalList(hospitals[0], hospitals[1], hospitals[2]);
-        residents[1].setHospitalList(hospitals[0], hospitals[1], hospitals[2]);
-        residents[2].setHospitalList(hospitals[0], hospitals[1]);
-        residents[3].setHospitalList(hospitals[0], hospitals[2]);
+//        var residents = IntStream.rangeClosed(0, 3)
+//                                 .mapToObj(i -> new Resident("Resident" + i) )
+//                                 .toArray(Resident[]::new);
+//
+//        var hospitals = IntStream.rangeClosed(0, 2)
+//                                 .mapToObj(i -> new Hospital("Hospital" + i, i == 2 ? 2 : i % 2 + 1))
+//                                 .toArray(Hospital[]::new);
+//
+//        // adaug preferintele rezidentilor
+//        residents[0].setHospitalList(hospitals[0], hospitals[1], hospitals[2]);
+//        residents[1].setHospitalList(hospitals[0], hospitals[1], hospitals[2]);
+//        residents[2].setHospitalList(hospitals[0], hospitals[1]);
+//        residents[3].setHospitalList(hospitals[0], hospitals[2]);
 
         // List<Resident> residentArrayList = Arrays.stream(residents).sorted(Comparator.comparing(Resident::getName)).collect(Collectors.toList());
 //        List<Resident> residentList = new ArrayList<>();
@@ -57,12 +61,13 @@ public class Main {
 //        hospitalSet.stream()
 //                   .filter(hos -> hos.getResidentList().size() > 0 && hos.getResidentList().get(0).equals(residents[0]))
 //                   .forEach(System.out::println);
-        Problem problem = new Problem();
-        problem.setSomeHospitals(hospitals[0], hospitals[1], hospitals[2]);
-        problem.setSomeResidents(residents[0], residents[1], residents[2], residents[3]);
-        problem.solve();
-        for (Element element : problem.getSomeMatching()) {
-            System.out.println(element);
-        }
+
+//        Problem problem = new Problem();
+//        problem.setSomeHospitals(hospitals[0], hospitals[1], hospitals[2]);
+//        problem.setSomeResidents(residents[0], residents[1], residents[2], residents[3]);
+//        problem.solve();
+//        for (Element element : problem.getSomeMatching()) {
+//            System.out.println(element);
+//        }
     }
 }

@@ -29,6 +29,11 @@ public class Problem {
         Collections.addAll(this.someResidents, someResidents);
     }
 
+    public Problem(List<Hospital> someHospitals, List<Resident> someResidents) {
+        this.someHospitals = someHospitals;
+        this.someResidents = someResidents;
+    }
+
     public List<Element> getSomeMatching() {
         return someMatching;
     }
@@ -45,5 +50,38 @@ public class Problem {
                 }
             }
         }
+    }
+
+    /**
+     *
+     * @return false if resident prefers another hospital, and the hospital prefers the resident, true otherwise
+     */
+    public boolean isStableMatching() {
+//        for w in women:
+//        for m in [men w would prefer over current_partner(w)]:
+//        if m prefers w to current_partner(m) return false
+//
+//        return true
+        for (Hospital hospital : someHospitals) {
+            for (Resident resident : hospital.getResidentList()) {
+
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("****************************************************\n");
+        for (Resident resident : someResidents) {
+            stringBuilder.append(resident);
+            stringBuilder.append("\n");
+        }
+        for (Hospital hospital : someHospitals) {
+            stringBuilder.append(hospital);
+            stringBuilder.append("\n");
+        }
+        stringBuilder.append("**********************************************************\n");
+        return stringBuilder.toString();
     }
 }

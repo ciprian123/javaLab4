@@ -59,11 +59,15 @@ public class Resident {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Rezident: ");
+        stringBuilder.append("\"");
         stringBuilder.append(getName());
+        stringBuilder.append("\"");
         stringBuilder.append("\n");
         stringBuilder.append("Lista spitale aplicate: ");
         for (Hospital hospital : hospitalList) {
+            stringBuilder.append("\"");
             stringBuilder.append(hospital.getName());
+            stringBuilder.append("\"");
             stringBuilder.append(" ");
         }
         stringBuilder.append("\n");

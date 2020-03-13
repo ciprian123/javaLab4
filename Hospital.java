@@ -57,14 +57,18 @@ public class Hospital implements Comparable<Hospital> {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Hospital: ");
+        stringBuilder.append("\"");
         stringBuilder.append(getName());
+        stringBuilder.append("\"");
         stringBuilder.append("\n");
         stringBuilder.append("Capacity: ");
         stringBuilder.append(getCapacity());
         stringBuilder.append("\n");
         for (Resident resident : residentList) {
             stringBuilder.append("Resident: ");
+            stringBuilder.append("\"");
             stringBuilder.append(resident.getName());
+            stringBuilder.append("\"");
             stringBuilder.append("\n");
         }
         return stringBuilder.toString();
